@@ -7,27 +7,27 @@ This is a beginner SQL project that simulates a basic library system using struc
 ## 🗂️ Database Tables
 
 ### 📘 Books
-Stores book details.
-- `book_id` (Primary Key)
-- `title`
-- `author`
-- `published_year`
-- `genre`
+Stores details of books available in the library.
+- `book_id` INT (Primary Key)
+- `title` VARCHAR
+- `author` VARCHAR
+- `published_year` INT
+- `genre` VARCHAR
 
 ### 👤 Members
-Stores library member info.
-- `member_id` (Primary Key)
-- `name`
-- `email` (Unique)
-- `join_date` (Auto-generated timestamp)
+Stores information about registered members.
+- `member_id` INT (Primary Key)
+- `name` VARCHAR
+- `email` VARCHAR (Unique)
+- `join_date` TIMESTAMP (Default: current timestamp)
 
 ### 🔁 BorrowedBooks
-Tracks borrow/return activities.
-- `borrow_id` (Primary Key)
-- `member_id` (FK)
-- `book_id` (FK)
-- `borrow_date` (Auto-timestamp)
-- `return_date`
+Tracks which members borrowed which books and when.
+- `borrow_id` INT (Primary Key)
+- `member_id` INT (Foreign Key)
+- `book_id` INT (Foreign Key)
+- `borrow_date` TIMESTAMP (Default: current timestamp)
+- `return_date` DATE
 
 ---
 
@@ -39,16 +39,19 @@ Tracks borrow/return activities.
 ---
 
 ## 🧪 What I Practiced
-- `CREATE`, `INSERT`, `UPDATE`, `DELETE`
-- `PRIMARY KEY`, `UNIQUE`, `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP`
-- Table relationships using `FOREIGN KEY`
+
+- `CREATE TABLE`, `INSERT INTO`, `UPDATE`, `DELETE`
+- `PRIMARY KEY`, `UNIQUE`, `NOT NULL`
+- `DEFAULT CURRENT_TIMESTAMP`
+- `FOREIGN KEY` relationships
 
 ---
 
 ## 💡 How to Run
-1. Use any online SQL runner (e.g., [db-fiddle](https://www.db-fiddle.com/), [sqliteonline.com](https://sqliteonline.com))
-2. Copy and paste the `library_management.sql` code
-3. Run and experiment
+1. Use any online SQL runner (e.g., [db-fiddle](https://www.db-fiddle.com/),
+2. [sqliteonline.com](https://sqliteonline.com))
+3. Copy and paste the `library_management.sql` code
+4. Run and experiment
 
 ---
 
